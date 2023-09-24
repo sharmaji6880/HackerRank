@@ -24,21 +24,12 @@ public class Solution {
             sums.get(i).set(i,arr.get(i));
         }
         for(int i=0;i<n;i++) {
-            for(int j=0;j<n;j++) {
-                if(i>=j) {
-                    continue;
-                }
+            for(int j=i+1;j<n;j++) {
                 int x = sums.get(i).get(j-1);
                 int y = arr.get(j);
                 sums.get(i).set(j,x+y);
             }
         }
-        // for(int i=0;i<n;i++) {
-        //     for(int j=0;j<n;j++) {
-        //         System.out.print(sums.get(i).get(j)+" ");
-        //     }
-        //     System.out.println();
-        // }
         int count=0;
         for(int i=0;i<n;i++) {
             for(int j=i;j<n;j++) {
